@@ -27,6 +27,18 @@ public class ListaEnlazada<T> {
         tamanio++;
     }
 
+    // Método de búsqueda requerido por la rúbrica
+    public boolean buscar(T dato) {
+        Nodo<T> actual = cabeza;
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) {
+                return true;
+            }
+            actual = actual.getSiguiente();
+        }
+        return false;
+    }
+
     public Nodo<T> getCabeza() {
         return cabeza;
     }
